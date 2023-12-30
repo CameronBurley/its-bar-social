@@ -2,7 +2,8 @@ import {
     Wrap,
     WrapItem,
     Spinner,
-    Text
+    Text,
+    Center
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import CardWithImage from "./components/place/PlaceCard.jsx";
@@ -69,17 +70,20 @@ const Places = () => {
         fetchPlaces();
     }, [])
 
-    if (loading) {
-        return (
-            <Spinner
-                thickness='4px'
-                speed='0.65s'
-                emptyColor='gray.200'
-                color='blue.500'
-                size='xl'
-            />
-        )
-    }
+    // Maybe remove spinner
+    // if (loading) {
+    //     return (
+    //         <Center w="100vw" h="100vh">
+    //             <Spinner
+    //                 thickness='4px'
+    //                 speed='0.65s'
+    //                 emptyColor='gray.200'
+    //                 color='blue.500'
+    //                 size='xl'
+    //             />
+    //         </Center>
+    //     );
+    // }
 
     if (err) {
         return (
