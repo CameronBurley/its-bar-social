@@ -13,6 +13,7 @@ export default function Navbar() {
       bg="white"
       color="black"
       boxShadow="0px 2px 1px rgba(0, 0, 0, 0.33)" // Adjusted for Chakra UI syntax
+      w="full"
     >
       <Link to="/" style={{ height: '50px', display: 'flex', alignItems: 'center' }}>
         <Image src={Logo} alt="It's Bar Social logo" />

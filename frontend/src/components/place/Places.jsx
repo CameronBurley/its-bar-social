@@ -1,16 +1,17 @@
 import {
     Wrap,
     WrapItem,
+    Grid,
+    GridItem,
     Spinner,
     Text,
     Center
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import CardWithImage from "./components/place/PlaceCard.jsx";
+import CardWithImage from "./PlaceCard.jsx";
 
 const Places = () => {
 
-    // const [customers, setCustomers] = useState([]);
     const [places, setPlaces] = useState([])
     const [loading, setLoading] = useState(true);
     const [err, setError] = useState("");
@@ -71,19 +72,20 @@ const Places = () => {
     }, [])
 
     // Maybe remove spinner
-    // if (loading) {
-    //     return (
-    //         <Center w="100vw" h="100vh">
-    //             <Spinner
-    //                 thickness='4px'
-    //                 speed='0.65s'
-    //                 emptyColor='gray.200'
-    //                 color='blue.500'
-    //                 size='xl'
-    //             />
-    //         </Center>
-    //     );
-    // }
+    // Add behind feature flag
+    if (loading) {
+        return (
+            <Center w="100vw" h="100vh">
+                <Spinner
+                    thickness='3px'
+                    speed='0.65s'
+                    emptyColor='gray.200'
+                    color='blue.500'
+                    size='xl'
+                />
+            </Center>
+        );
+    }
 
     if (err) {
         return (
@@ -96,20 +98,28 @@ const Places = () => {
             <Text mt={5}>No places available</Text>
         )
     }
+
+    // Application is 1440 x 970 on the figma
+
+    // Bug where navbar doesn't take up the whole page
+    // Make Grid Dynamic
     
     // Make centered
     // Bug where when it goes to medium things get aligned differently, fix wrapItem values. Maybe make into grid honestly 
+    // Because wrap will only do what it can to fit on the line
+    // From there it won't change the spacing
     return (
-        <Wrap justify={{ base: "center", md: "center", lg: "flex-start" }} spacing="30px" align="stretch">
+        <Grid templateColumns={{ sm: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }} rowGap={0} columnGap={3} paddingLeft={93} paddingRight={93}>
             {places.map((place, index) => (
-                <WrapItem key={index} minW={{ base: "100%", sm: "calc(50% - 30px)", md: "calc(25% - 30px)" }}>
+                <GridItem key={index} w={"full"}>
                     <CardWithImage
                         {...place}
                         imageNumber={index}
+                        w={"full"}
                     />
-                </WrapItem>
+                </GridItem>
             ))}
-        </Wrap>
+        </Grid>
     )
 }
 

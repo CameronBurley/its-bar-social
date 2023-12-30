@@ -15,12 +15,12 @@ export default function CardWithImage({name, address, description, imageUrl, num
         <Center py={6} w={'full'}>
             <Box
                 onClick={() => console.log("hi")}
-                maxW={'300px'} // might need to move this
-                minW={'300px'}
+                maxW={'292px'} // might need to move this
+                minW={'292px'}
                 w={'full'}
                 m={3}
                 bg={useColorModeValue('white', 'gray.800')}
-                // boxShadow={'lg'}
+                boxShadow={'lg'}
                 style={{ cursor: 'pointer' }}
                 overflow={'hidden'}
             >
@@ -38,16 +38,18 @@ export default function CardWithImage({name, address, description, imageUrl, num
                     <Stack 
                         spacing={2} 
                         mb={3} 
-                        height={"150"} // why is this cutting off text? make dynamic
+                        width={"220"}
+                        height={"220"} // why is this cutting off text? make dynamic
                     >
-                        <Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'} textDecoration={"underline"}>
+                        <Heading fontSize={'24px'} fontWeight={500} fontFamily={'body'} textDecoration={"underline"}>
                             {name}
                         </Heading>
-                        <Box >
+                        <Box fontSize={'18px'}>
                             <Text>{rating} rating</Text>
                             <Text>({numberOfReviews}) reviews</Text>
                             <Text>{type}</Text>
                             <Text>{address}</Text>
+                            <Text>Closes Soon 2AM</Text>
                             <Text isTruncated>{description}</Text>
                         </Box>
                     </Stack>
@@ -91,7 +93,7 @@ const ImageWithHeart = ({ src }) => {
       <Box position="relative" display="inline-block">
         <Image
             h={'290px'}
-            w={'290px'}
+            w={'full'}
             rounded={'3xl'}
             src={src}
             objectFit={'cover'}
