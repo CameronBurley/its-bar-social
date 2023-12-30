@@ -38,13 +38,14 @@ export default function CardWithImage({name, address, description, imageUrl, num
                     <Stack 
                         spacing={2} 
                         mb={3} 
-                        width={"220"}
-                        height={"220"} // why is this cutting off text? make dynamic
+                        width={"292"}
+                        height={"195"} // why is this cutting off text? make dynamic
                     >
                         <Heading fontSize={'24px'} fontWeight={500} fontFamily={'body'} textDecoration={"underline"}>
                             {name}
                         </Heading>
                         <Box fontSize={'18px'} paddingTop={2}>
+                            <Text>{rating} rating</Text>
                             <Text>({numberOfReviews}) reviews</Text>
                             <Text>{type}</Text>
                             <Text>{address}</Text>
