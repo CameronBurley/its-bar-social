@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 export default function CardWithImage({name, address, description, imageUrl, numberOfReviews, rating, type}) {
     return (
-        <Center py={6} w={'full'}>
+        <Center w={'full'}>
             <Box
                 onClick={() => console.log("hi")}
                 maxW={'292px'} // might need to move this
@@ -44,8 +44,7 @@ export default function CardWithImage({name, address, description, imageUrl, num
                         <Heading fontSize={'24px'} fontWeight={500} fontFamily={'body'} textDecoration={"underline"}>
                             {name}
                         </Heading>
-                        <Box fontSize={'18px'}>
-                            <Text>{rating} rating</Text>
+                        <Box fontSize={'18px'} paddingTop={2}>
                             <Text>({numberOfReviews}) reviews</Text>
                             <Text>{type}</Text>
                             <Text>{address}</Text>
