@@ -13,3 +13,5 @@ WARNING: Unmatched cancel notification for request id 1
 2023.12.29 22:05:06 WARN  no build tool detected in workspace '/Users/cameronburley/projects/its-bar-social/react'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 Dec 29, 2023 10:06:07 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
+Dec 29, 2023 11:12:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
