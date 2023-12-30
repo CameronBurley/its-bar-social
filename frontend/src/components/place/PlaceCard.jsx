@@ -8,9 +8,6 @@ import {
     Text,
     useColorModeValue,
 } from '@chakra-ui/react';
-import { AiFillHeart } from 'react-icons/ai';
-// import { ReactComponent as HeartSvg } from '../../assets/heart.svg'; // adjust the path to where your SVG is located
-import HeartSvg from '../../assets/heart.svg'; // adjust the path to where your SVG is located
 import { useState } from 'react';
 
 export default function CardWithImage({name, address, description, imageUrl, numberOfReviews, rating, type}) {
@@ -103,11 +100,12 @@ const ImageWithHeart = ({ src }) => {
             position="absolute"
             top="2"
             right="2"
-            w={6}
-            h={6}
+            w={5}
+            h={5}
             zIndex="1"
             onClick={toggleLike}
             cursor="pointer"
+            userSelect="none"
         />
       </Box>
     );
